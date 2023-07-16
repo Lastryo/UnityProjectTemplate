@@ -1,0 +1,17 @@
+{
+    "name": "minimal_project_template",
+    "author": "Lastryo",
+    "displayName": "Minimal Template",
+    "description": "Lightweight minimal template with global update and events for Unity Game Engine.",
+    "unity": "2020.3",
+    "version": "2022.2.3",
+    "keywords": [
+        "minimal",
+        "template"
+    ],
+    "dependencies": {},
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Lastryo/UnityProjectTemplate"
+    }
+}
