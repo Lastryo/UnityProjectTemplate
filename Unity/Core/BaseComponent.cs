@@ -7,14 +7,14 @@ namespace Core
     {
         protected virtual void Start()
         {
-            var _globalUpdate = GameManager.Instance.GlobalUpdate;
-            _globalUpdate.Register(this);
+            var _globalContainer = GameManager.Instance.GlobalContainer;
+            _globalContainer.Register(this);
         }
 
         private void OnDestroy()
         {
-            var _globalUpdate = GameManager.Instance.GlobalUpdate;
-            _globalUpdate.Unregister(this);
+            var _globalContainer = GameManager.Instance.GlobalContainer;
+            _globalContainer.Unregister(this);
         }
     }
 }

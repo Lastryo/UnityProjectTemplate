@@ -5,8 +5,8 @@ namespace Core
     public class GameManager : MonoBehaviour
     {
         public static GameManager Instance;
-        [SerializeField] private GlobalUpdate globalUpdate;
-        public GlobalUpdate GlobalUpdate => globalUpdate;
+        [SerializeField] private GlobalContainer globalContainer;
+        public GlobalContainer GlobalContainer => globalContainer;
 
         private void Awake()
         {
@@ -19,17 +19,17 @@ namespace Core
 
         private void Update()
         {
-            GlobalUpdate.Update();
+            globalContainer.Update();
         }
 
         private void FixedUpdate()
         {
-            GlobalUpdate.FixedUpdate();
+            globalContainer.FixedUpdate();
         }
 
         private void LateUpdate()
         {
-            GlobalUpdate.LateUpdate();
+            globalContainer.LateUpdate();
         }
     }
 }

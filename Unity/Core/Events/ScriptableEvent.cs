@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Core.Events
 {
-    public abstract class ScriptableEvent<T> : ScriptableObject
+    public abstract class ScriptableEvent<T> : ScriptableEvent
     {
         [NonSerialized]
         private Action<T> action;
@@ -23,4 +23,6 @@ namespace Core.Events
             action?.Invoke(value);
         }
     }
+
+    public class ScriptableEvent : ScriptableObject { }
 }

@@ -5,8 +5,8 @@ using UnityEngine;
 
 namespace Core
 {
-    [CreateAssetMenu(fileName = "GlobalUpdate", menuName = "UnityProjectTemplate/GlobalUpdate", order = 0)]
-    public class GlobalUpdate : ScriptableObject
+    [CreateAssetMenu(fileName = "GlobalContainer", menuName = "UnityProjectTemplate/GlobalContainer", order = 0)]
+    public class GlobalContainer : ScriptableObject
     {
         [NonSerialized]
         private List<IUpdatable> updatables = new List<IUpdatable>();
