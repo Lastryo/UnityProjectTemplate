@@ -11,7 +11,7 @@ namespace Core
             _globalContainer.Register(this);
         }
 
-        private void OnDestroy()
+        protected virtual void OnDestroy()
         {
             var _globalContainer = GameManager.Instance.GlobalContainer;
             _globalContainer.Unregister(this);
