@@ -4,7 +4,7 @@
     "displayName": "Minimal Template",
     "description": "Lightweight minimal template with global update and events for Unity Game Engine.",
     "unity": "2020.3",
-    "version": "2022.2.3",
+    "version": "0.0.2",
     "keywords": [
         "minimal",
         "template"
