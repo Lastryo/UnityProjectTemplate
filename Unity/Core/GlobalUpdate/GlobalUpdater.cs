@@ -5,14 +5,11 @@ using UnityEngine;
 
 namespace Core
 {
-    [CreateAssetMenu(fileName = "GlobalContainer", menuName = "UnityProjectTemplate/GlobalContainer", order = 0)]
-    public class GlobalContainer : ScriptableObject
+    [Serializable]
+    public class GlobalUpdater
     {
-        [NonSerialized]
         private List<IUpdatable> updatables = new List<IUpdatable>();
-        [NonSerialized]
         private List<IFixedUpdatable> fixedUpdatables = new List<IFixedUpdatable>();
-        [NonSerialized]
         private List<ILateUpdatable> lateUpdatables = new List<ILateUpdatable>();
 
         public void Register(UnityEngine.Object obj)

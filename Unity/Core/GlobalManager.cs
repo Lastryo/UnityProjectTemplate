@@ -2,11 +2,10 @@ using UnityEngine;
 
 namespace Core
 {
-    public class GameManager : MonoBehaviour
+    public class GlobalManager : MonoBehaviour
     {
-        public static GameManager Instance;
-        [SerializeField] private GlobalContainer globalContainer;
-        public GlobalContainer GlobalContainer => globalContainer;
+        public static GlobalManager Instance;
+        public GlobalUpdater GlobalUpdater { get; private set; } = new GlobalUpdater();
 
         private void Awake()
         {
@@ -19,17 +18,17 @@ namespace Core
 
         private void Update()
         {
-            globalContainer.Update();
+            GlobalUpdater.Update();
         }
 
         private void FixedUpdate()
         {
-            globalContainer.FixedUpdate();
+            GlobalUpdater.FixedUpdate();
         }
 
         private void LateUpdate()
         {
-            globalContainer.LateUpdate();
+            GlobalUpdater.LateUpdate();
         }
     }
 }
