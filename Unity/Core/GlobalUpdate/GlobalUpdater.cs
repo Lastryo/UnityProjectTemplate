@@ -1,5 +1,6 @@
 using System;
 using System.Buffers;
+using Core.Interfaces;
 
 [Serializable]
 public class GlobalUpdater
@@ -36,7 +37,17 @@ public class GlobalUpdater
 
         public void Remove(T item)
         {
-            int index = array.AsSpan(0, count).IndexOf(item);
+            // Ручной поиск индекса элемента
+            int index = -1;
+            for (int i = 0; i < count; i++)
+            {
+                if (ReferenceEquals(array[i], item))
+                {
+                    index = i;
+                    break;
+                }
+            }
+
             if (index >= 0)
             {
                 // Swap-and-pop: заменяем удаляемый элемент последним
