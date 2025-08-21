@@ -12,7 +12,7 @@ namespace Core
         private List<IFixedUpdatable> fixedUpdatables = new List<IFixedUpdatable>();
         private List<ILateUpdatable> lateUpdatables = new List<ILateUpdatable>();
 
-        public void Register(UnityEngine.Object obj)
+        public void Register(object obj)
         {
             if (obj is IUpdatable updatable)
                 updatables.Add(updatable);
@@ -22,7 +22,7 @@ namespace Core
                 lateUpdatables.Add(lateUpdatable);
         }
 
-        public void Unregister(UnityEngine.Object obj)
+        public void Unregister(object obj)
         {
             if (obj is IUpdatable updatable)
                 updatables.Remove(updatable);
