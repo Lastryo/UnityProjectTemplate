@@ -11,9 +11,9 @@ public class GlobalUpdater
 
     private class UpdaterCollection<T> where T : class
     {
-        private const int InitialCapacity = 16; // Начальная ёмкость массива
-        private T[] array; // Арендованный массив из пула
-        private int count; // Текущее количество элементов
+        private const int InitialCapacity = 16; 
+        private T[] array; 
+        private int count; 
 
         public UpdaterCollection()
         {
@@ -74,7 +74,6 @@ public class GlobalUpdater
 
     public void Register(object obj)
     {
-        // Регистрируем объект во всех подходящих коллекциях
         if (obj is IUpdatable updatable)
             updatables.Add(updatable);
         if (obj is IFixedUpdatable fixedUpdatable)
@@ -85,7 +84,6 @@ public class GlobalUpdater
 
     public void Unregister(object obj)
     {
-        // Удаляем объект из всех подходящих коллекций
         if (obj is IUpdatable updatable)
             updatables.Remove(updatable);
         if (obj is IFixedUpdatable fixedUpdatable)
@@ -111,7 +109,6 @@ public class GlobalUpdater
 
     public void Dispose()
     {
-        // Освобождаем все арендованные массивы
         updatables.Dispose();
         fixedUpdatables.Dispose();
         lateUpdatables.Dispose();
